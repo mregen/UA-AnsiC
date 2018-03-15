@@ -379,7 +379,7 @@ static bool Decode(
 	certificate.Length = signingCertificateLength;
 
 	auto senderKeyLength = DecodeUInt32(data, offset + 8 + signingCertificateLength, length);
-	auto pSenderKey = data + offset + 12;
+	auto pSenderKey = data + offset + 12 + signingCertificateLength;
 
 	OpcUa_ByteString senderKey;
 	senderKey.Data = pSenderKey;
